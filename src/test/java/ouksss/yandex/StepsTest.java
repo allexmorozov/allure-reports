@@ -20,23 +20,23 @@ public class StepsTest {
     @Test
     public void testLambdaTests() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        step("Open main page", () -> {
+        step("Открываем главную страницу ", () -> {
             open("https://github.com");
         });
 
-        step("Search repository " + REPOSITORY, () -> {
+        step("Ищем репозиторий " + REPOSITORY, () -> {
             $(".header-search-input").setValue("eroshenkoam/allure-example").submit();
         });
 
-        step("Open repository " + REPOSITORY, () -> {
+        step("Открываем репозиторий " + REPOSITORY, () -> {
             $(By.linkText("eroshenkoam/allure-example")).click();
         });
 
-        step("Go to tab Issues ", () -> {
+        step("Переходим в Issues ", () -> {
             $(By.partialLinkText("Issues")).click();
         });
 
-        step("Checked, what Issue with " + ISSUE_NUMBER,()->{
+        step("Проверяем, что в Issues есть число " + ISSUE_NUMBER,()->{
             $(withText("#68")).should(exist);
         });
 
