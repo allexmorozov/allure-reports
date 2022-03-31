@@ -24,7 +24,7 @@ public class HomeworkWebSteps {
         $(By.linkText("allexmorozov/allure-reports")).click();
     }
 
-    @Step
+    @Step("Find text {text}")
     public void findText(String text){
         $("body").shouldHave(text("Issues"));
     }
