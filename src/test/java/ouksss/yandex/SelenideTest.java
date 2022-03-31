@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -23,6 +24,7 @@ public class SelenideTest {
         $(By.linkText("eroshenkoam/allure-example")).click();
         $(By.partialLinkText("Issues")).click();
         $(withText("#68")).should(exist);
+        $("body").shouldHave(text("Issues"));
 
     }
 }
